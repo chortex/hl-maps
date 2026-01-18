@@ -54,7 +54,7 @@
             "tsConfig": "demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": ["demo/src/favicon.ico", "demo/src/assets"],
-            "styles": ["demo/src/styles.scss"],
+            "styles": ["demo/src/styles.scss", "node_modules/maplibre-gl/dist/maplibre-gl.css"],
             "scripts": []
           },
           "configurations": {
