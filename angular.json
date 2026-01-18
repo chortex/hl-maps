@@ -3,10 +3,10 @@
   "version": 1,
   "newProjectRoot": ".",
   "projects": {
-    "lib": {
+    "ui": {
       "projectType": "library",
-      "root": "lib",
-      "sourceRoot": "lib/src",
+      "root": "ui",
+      "sourceRoot": "ui/src",
       "prefix": "hl",
       "architect": {
         "build": {

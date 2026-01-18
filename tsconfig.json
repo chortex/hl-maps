@@ -19,7 +19,7 @@
     "module": "ES2020",
     "lib": ["ES2020", "dom"],
     "paths": {
-      "@hlmaps/ui": ["lib/src/public-api.ts"]
+      "@hlmaps/ui": ["ui/src/public-api.ts"]
     }
   },
   "angularCompilerOptions": {
