@@ -22,15 +22,31 @@
     "build": "ng build ui",
     "build:lib": "ng build ui --configuration production",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "pretty": "prettier . --write --config .prettierrc.json",
+    "format-check": "prettier . -c --config .prettierrc.json",
+    "lint-check": "eslint . --ext .ts,.html",
+    "audit-check": "npm audit --audit-level=moderate",
+    "verify": "npm run format-check && npm run lint-check && npm run audit-check",
+    "prepare": "husky"
   },
   "private": true,
-  "dependencies": {},
   "devDependencies": {
+    "@angular-devkit/build-angular": "^17.3.17",
     "@angular/cli": "^17.3.17",
     "@angular/compiler-cli": "^17.3.12",
-    "@angular-devkit/build-angular": "^17.3.17",
+    "@typescript-eslint/eslint-plugin": "^8.53.0",
+    "@typescript-eslint/parser": "^8.53.0",
+    "eslint": "^9.39.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "ng-packagr": "^17.3.0",
+    "prettier": "^3.8.0",
     "typescript": "5.2"
+  },
+  "lint-staged": {
+    "*.ts": "eslint --fix",
+    "*.html": "eslint --fix",
+    "*.{ts,html,json,scss,md}": "prettier --write"
   }
 }
