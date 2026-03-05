@@ -54,7 +54,14 @@
             "tsConfig": "demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": ["demo/src/favicon.ico", "demo/src/assets"],
-            "styles": ["demo/src/styles.scss", "node_modules/maplibre-gl/dist/maplibre-gl.css"],
+            "styles": [
+              "demo/src/styles.scss",
+              "node_modules/maplibre-gl/dist/maplibre-gl.css",
+              "node_modules/@chortex/ui-kit-lib/src/normalize.scss",
+              "node_modules/@chortex/ui-kit-lib/src/new-colors.scss",
+              "node_modules/@chortex/ui-kit-lib/src/styles.scss",
+              "node_modules/@chortex/ui-kit-lib/src/light_theme.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -106,7 +113,13 @@
             "tsConfig": "demo/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": ["demo/src/favicon.ico", "demo/src/assets"],
-            "styles": ["demo/src/styles.scss"],
+            "styles": [
+              "node_modules/@chortex/ui-kit-lib/src/normalize.scss",
+              "node_modules/@chortex/ui-kit-lib/src/new-colors.scss",
+              "node_modules/@chortex/ui-kit-lib/src/styles.scss",
+              "node_modules/@chortex/ui-kit-lib/src/light_theme.scss",
+              "demo/src/styles.scss"
+            ],
             "scripts": []
           }
         }

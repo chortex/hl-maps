@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-feature-settings: 'tnum';
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--surface-2);
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  src: url('assets/fonts/roboto-mono-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
