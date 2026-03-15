@@ -1,3 +1,9 @@
-<ui-side-bar [height]="'calc(100cqh - var(--space-6))'">
-  <ui-menu-item label="Random test title" iconName="map"></ui-menu-item>
+<ui-side-bar [height]="'calc(100cqh - var(--space-6))'" [width]="'280px'">
+  <ui-menu-item
+    label="Basic map"
+    [routerLink]="['/demo/map-basic']"
+    routerLinkActive
+    #rla="routerLinkActive"
+    [active]="rla.isActive"
+  ></ui-menu-item>
 </ui-side-bar>
