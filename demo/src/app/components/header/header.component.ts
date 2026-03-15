@@ -7,4 +7,7 @@ import { UiModule } from '@chortex/ui-kit-lib';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  ghLink = 'https://github.com/chortex/hl-maps';
+  target = '_blank';
+}
