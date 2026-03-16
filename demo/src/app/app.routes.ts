@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
-import { MapDemoComponent } from './components/map-demo/map-demo.component';
+import { MapDemoComponent } from './examples/map-demo.component';
+import { LayerDemoComponent } from './examples/layer-demo.component';
 
 export const routes: Routes = [
   {
@@ -20,6 +21,11 @@ export const routes: Routes = [
         path: 'map-basic',
         component: MapDemoComponent,
         title: 'HL Maps - Basic Map',
+      },
+      {
+        path: 'map-layer',
+        component: LayerDemoComponent,
+        title: 'HL Maps - Map Layers',
       },
     ],
   },

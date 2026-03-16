@@ -1,9 +1,13 @@
 <ui-side-bar [height]="'calc(100cqh - var(--space-6))'" [width]="'280px'">
   <ui-menu-item
     label="Basic map"
-    [routerLink]="['/demo/map-basic']"
-    routerLinkActive
-    #rla="routerLinkActive"
-    [active]="rla.isActive"
+    [routerLink]="'/demo/map-basic'"
+    [active]="isActive('/demo/map-basic')"
+  ></ui-menu-item>
+
+  <ui-menu-item
+    label="Layers"
+    [routerLink]="'/demo/map-layer'"
+    [active]="isActive('/demo/map-layer')"
   ></ui-menu-item>
 </ui-side-bar>
