@@ -21,7 +21,7 @@ import { MapService } from '../../services/map.service';
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [MapService],
+  providers: [],
   standalone: true,
 })
 export class HlMapComponent implements AfterViewInit, OnDestroy {
@@ -32,6 +32,7 @@ export class HlMapComponent implements AfterViewInit, OnDestroy {
   private containerRef!: ElementRef<HTMLDivElement>;
 
   readonly style = input.required<MapStyle>();
+  readonly mapId = input<string>('default');
 
   // Base map options
   readonly center = input<[number, number] | undefined>();
@@ -64,12 +65,14 @@ export class HlMapComponent implements AfterViewInit, OnDestroy {
 
   private readonly styleEffect = effect(() => {
     const style = this.style();
-    if (this.mapService.isReady()) {
-      this.mapService.setStyle(style);
+    const mapId = this.mapId();
+    if (this.mapService.isReady(mapId)) {
+      this.mapService.setStyle(style, mapId);
     }
   });
 
   ngAfterViewInit(): void {
+    const mapId = this.mapId();
     const style = this.style();
 
     const center = this.center();
@@ -123,9 +126,10 @@ export class HlMapComponent implements AfterViewInit, OnDestroy {
     const container = this.containerRef.nativeElement;
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const map = this.mapService.init(container, options);
+    const map = this.mapService.init(container, options, mapId);
 
-    this.mapService.load$
+    this.mapService
+      .load$(mapId)
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((m) => this.mapLoad.emit(m));
 
@@ -135,6 +139,6 @@ export class HlMapComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.mapService.destroy();
+    this.mapService.destroy(this.mapId());
   }
 }
