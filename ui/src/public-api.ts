@@ -7,3 +7,4 @@ export * from './lib/services/map.service';
 
 // Types
 export * from './lib/interfaces/map.interface';
+export * from './lib/interfaces/layer.interface';
