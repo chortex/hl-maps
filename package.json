@@ -20,6 +20,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve demo",
+    "start:docker": "ng serve demo --host 0.0.0.0 --port 3000 --poll=2000",
+    "start:devcontainer": "npm run start:docker",
     "build": "ng build lib",
     "build:lib": "ng build lib --configuration production",
     "build:demo": "ng build demo",
@@ -30,7 +32,7 @@
     "lint-check": "eslint . --ext .ts,.html",
     "audit-check": "npm audit --audit-level=moderate",
     "verify": "npm run format-check && npm run lint-check && npm run audit-check",
-    "prepare": "husky"
+    "prepare": "husky || true"
   },
   "private": true,
   "devDependencies": {
