@@ -1,0 +1,38 @@
+{
+  "name": "hl-maps",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+
+  "containerEnv": {
+    "IN_DEVCONTAINER": "true",
+    "IS_CONTAINER": "true",
+    "GITHUB_TOKEN": "${localEnv:GITHUB_TOKEN}"
+  },
+
+  "forwardPorts": [3000],
+
+  "portsAttributes": {
+    "3000": {
+      "label": "hl-maps demo",
+      "onAutoForward": "notify"
+    }
+  },
+
+  "mounts": [
+    "source=${localEnv:HOME}/.bash_history,target=/home/node/.bash_history,type=bind,consistency=cached"
+  ],
+
+  "postCreateCommand": "echo 'export PROMPT_COMMAND=\"history -a; history -c; history -r\"' >> ~/.bashrc",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "eamodio.gitlens",
+        "mutantdino.resourcemonitor",
+        "mhutchie.git-graph",
+        "angular.ng-template",
+        "esbenp.prettier-vscode",
+        "rvest.vs-code-prettier-eslint"
+      ]
+    }
+  }
+}
