@@ -19,9 +19,7 @@
   ],
   "scripts": {
     "ng": "ng",
-    "start": "ng serve demo",
-    "start:docker": "ng serve demo --host 0.0.0.0 --port 3000 --poll=2000",
-    "start:devcontainer": "npm run start:docker",
+    "start": "sh -c 'if [ \"$IN_DEVCONTAINER\" = \"true\" ]; then ng serve demo --host 0.0.0.0 --port 3000 --poll=2000; else ng serve demo; fi'",
     "build": "ng build lib",
     "build:lib": "ng build lib --configuration production",
     "build:demo": "ng build demo",
