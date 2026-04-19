@@ -35,8 +35,7 @@
 ## Commands
 
 - Install deps: `npm install`
-- Start demo locally: `npm run start`
-- Start in devcontainer/docker: `npm run start:devcontainer`
+- Start demo: `npm run start`
 - Build library: `npm run build`
 - Production library build: `npm run build:lib`
 - Build demo: `npm run build:demo`
