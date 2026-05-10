@@ -2,6 +2,10 @@
   "name": "hl-maps",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
 
+  "features": {
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1": {}
+  },
+
   "containerEnv": {
     "IN_DEVCONTAINER": "true",
     "IS_CONTAINER": "true",
@@ -18,7 +22,8 @@
   },
 
   "mounts": [
-    "source=${localEnv:HOME}/.bash_history,target=/home/node/.bash_history,type=bind,consistency=cached"
+    "source=${localEnv:HOME}/.bash_history,target=/home/node/.bash_history,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.claude,target=/home/node/.claude,type=bind,consistency=cached"
   ],
 
   "postCreateCommand": "echo 'export PROMPT_COMMAND=\"history -a; history -c; history -r\"' >> ~/.bashrc",

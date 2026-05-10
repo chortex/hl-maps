@@ -20,8 +20,8 @@
   "scripts": {
     "ng": "ng",
     "start": "sh -c 'if [ \"$IN_DEVCONTAINER\" = \"true\" ]; then ng serve demo --host 0.0.0.0 --port 3000 --poll=2000; else ng serve demo; fi'",
-    "build": "ng build lib",
-    "build:lib": "ng build lib --configuration production",
+    "build": "ng build ui",
+    "build:lib": "ng build ui --configuration production",
     "build:demo": "ng build demo",
     "test": "ng test",
     "lint": "ng lint",

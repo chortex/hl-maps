@@ -12,14 +12,14 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "lib/ng-package.json"
+            "project": "ui/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "lib/tsconfig.lib.prod.json"
+              "tsConfig": "ui/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "lib/tsconfig.lib.json"
+              "tsConfig": "ui/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -27,7 +27,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "lib/tsconfig.spec.json",
+            "tsConfig": "ui/tsconfig.spec.json",
             "polyfills": ["zone.js", "zone.js/testing"]
           }
         }
